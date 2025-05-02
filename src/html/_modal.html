@@ -1,0 +1,122 @@
+<!-- Модальные окна -->
+
+<!-- Модальное окно мультипокупки -->
+<div class="modal" id="multipurchase">
+  <div class="modal__content">
+    <div class="modal__header">
+      <h2 class="modal__title title">МУЛЬТИПОКУПКА <img src="./img/icons/question.svg" alt="question"></h2>
+      <button class="close-modal-btn">
+        <img src="./img/icons/close.svg" alt="Закрыть">
+      </button>
+    </div>
+
+    <div class="modal__body">
+      <div class="multipurchase">
+        <div class="multipurchase__row">
+          <div class="multipurchase__label">
+            Количество билетов
+            <span class="multipurchase__sublabel">Билеты выбираются случайным образом</span>
+          </div>
+
+          <div class="multipurchase__counter">
+            <button class="multipurchase__counter-btn multipurchase__counter-minus">
+              <img src="./img/icons/minus.svg" alt="minus">
+            </button>
+            <div class="multipurchase__counter-value">5 билетов</div>
+            <button class="multipurchase__counter-btn multipurchase__counter-plus">
+              <img src="./img/icons/plus.svg" alt="plus">
+            </button>
+          </div>
+
+          <div class="multipurchase__buttons">
+            <button class="multipurchase__button multipurchase__button--active">5</button>
+            <button class="multipurchase__button">10</button>
+            <button class="multipurchase__button">20</button>
+            <button class="multipurchase__button">50</button>
+            <button class="multipurchase__button">75</button>
+            <button class="multipurchase__button">100</button>
+          </div>
+        </div>
+
+        <div class="multipurchase__row">
+          <div class="multipurchase__label">
+            Количество тиражей
+            <span class="multipurchase__sublabel">Ближайший 27 апреля, в 00:30</span>
+          </div>
+
+          <div class="multipurchase__counter">
+            <button class="multipurchase__counter-btn multipurchase__counter-minus">
+              <img src="./img/icons/minus.svg" alt="minus">
+            </button>
+            <div class="multipurchase__counter-value">1 тираж</div>
+            <button class="multipurchase__counter-btn multipurchase__counter-plus">
+              <img src="./img/icons/plus.svg" alt="plus">
+            </button>
+          </div>
+        </div>
+
+        <div class="multipurchase__row">
+          <div class="multipurchase__row-justufy">
+            <div class="multipurchase__label">
+              Количество чисел в билете
+            </div>
+
+            <span class="multipurchase__counter-badge">x24</span>
+          </div>
+
+
+          <div class="multipurchase__counter">
+            <button class="multipurchase__counter-btn multipurchase__counter-minus">−</button>
+            <div class="multipurchase__counter-value">7</div>
+            <button class="multipurchase__counter-btn multipurchase__counter-plus">+</button>
+          </div>
+        </div>
+
+        <div class="multipurchase__row">
+          <div class="multipurchase__row-justufy">
+            <div class="multipurchase__label">
+              Множитель
+              <span class="multipurchase__sublabel">Повтор комбинаций в выбранных тиражах</span>
+            </div>
+            <div class="multipurchase__info-icon"><img width="20" src="./img/icons/info-2.svg" alt="info"></div>
+          </div>
+
+
+          <div class="multipurchase__counter">
+            <button class="multipurchase__counter-btn multipurchase__counter-minus">
+              <img src="./img/icons/minus.svg" alt="minus">
+            </button>
+            <div class="multipurchase__counter-value">x3</div>
+            <button class="multipurchase__counter-btn multipurchase__counter-plus">
+              <img src="./img/icons/plus.svg" alt="plus">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal__footer">
+      <button class="btn-primary modal__submit">КУПИТЬ БИЛЕТ · 20 USDT</button>
+    </div>
+  </div>
+</div>
+
+<!-- Пример второго модального окна -->
+<div class="modal" id="modal1">
+  <div class="modal__content">
+    <div class="modal__header">
+      <h2 class="modal__title">Пример другого модального окна</h2>
+      <button class="close-modal-btn">
+        <img src="./img/icons/close.svg" alt="Закрыть">
+      </button>
+    </div>
+
+    <div class="modal__body">
+      <p>Это другое модальное окно, которое можно открыть, используя кнопку с атрибутом data-modal-id="modal1".</p>
+    </div>
+
+    <div class="modal__footer">
+      <button class="btn-primary modal__submit">Подтвердить</button>
+    </div>
+  </div>
+</div>

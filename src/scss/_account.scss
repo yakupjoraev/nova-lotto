@@ -1,0 +1,209 @@
+.account {
+
+  // .account__inner
+
+  &__inner {}
+
+  // .account__profile
+
+  &__profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  // .account__profile-avatar
+
+  &__profile-avatar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--main-yellow);
+  }
+
+  // .account__profile-info
+
+  &__profile-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .account__profile-text
+
+  &__profile-text {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  // .account__profile-name
+
+  &__profile-name {}
+
+  // .account__profile-rangs
+
+  &__profile-rangs {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  // .account__profile-rang
+
+  &__profile-rang {
+
+    &--bronze {
+      margin-top: -2px;
+    }
+  }
+
+  // .account__profile-email
+
+  &__profile-email {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 110%;
+    color: #a4a4a4;
+  }
+
+  // .account__profile-exit
+
+  &__profile-exit {
+    background-color: transparent;
+    border: none;
+    outline: 0;
+    margin-left: auto;
+  }
+
+  // .account__balance
+
+  &__balance {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2px;
+    margin-bottom: 10px;
+  }
+
+  // .account__balance-title
+
+  &__balance-title {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110%;
+    text-align: center;
+    color: var(--text);
+  }
+
+  // .account__balance-amount
+
+  &__balance-amount {
+    font-family: var(--third-family);
+    font-weight: 700;
+    font-size: 32px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--text);
+  }
+
+  // .account__actions
+
+  &__actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  // .account__actions-btn
+
+  &__actions-btn {
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--white);
+  }
+
+  // .account__actions-btn--deposit
+
+  &__actions-btn--deposit {
+    background-color: var(--main-purple);
+  }
+
+  // .account__actions-btn-text
+
+  &__actions-btn-text {}
+
+  // .account__actions-btn--withdraw
+
+  &__actions-btn--withdraw {
+    background-color: var(--main-yellow);
+  }
+
+  // .account__list
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  // .account__list-link
+
+  &__list-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 12px;
+    background-color: var(--white);
+    padding: 12px 20px;
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110%;
+    color: var(--text);
+  }
+
+  // .account__list-info
+
+  &__list-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  // .account__list-img
+
+  &__list-img {}
+
+  // .account__list-text
+
+  &__list-text {}
+
+  // .account__list-arrow
+
+  &__list-arrow {
+    transform: rotate(-90deg);
+  }
+}

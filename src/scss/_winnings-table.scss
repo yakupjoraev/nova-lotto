@@ -1,0 +1,22 @@
+.winnings-table__table {
+  background-color: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+
+  table {
+    table-layout: fixed;
+  }
+
+  td {
+    font-size: 13px;
+  }
+}
+
+.winnings-table__table-jackpot {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  text-align: center;
+  color: var(--main-purple);
+}

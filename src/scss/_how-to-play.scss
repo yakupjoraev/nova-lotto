@@ -1,0 +1,104 @@
+.how-to-play {
+
+  // .how-to-play__inner
+
+  &__inner {}
+
+  // .how-to-play__content
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  // .how-to-play__info
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 12px;
+    background-color: var(--white);
+    padding: 12px 20px 20px;
+  }
+
+  // .how-to-play__item
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  // .how-to-play__item-icon
+
+  &__item-icon {
+    width: 24px;
+    min-width: 24px;
+  }
+
+  // .how-to-play__item-col
+
+  &__item-col {}
+
+  // .how-to-play__item-text
+
+  &__item-text {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110%;
+    color: var(--text);
+  }
+
+  // .how-to-play__item-subtext
+
+  &__item-subtext {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 110%;
+    color: #a4a4a4;
+  }
+
+  // .how-to-play__link
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 12px;
+    background-color: var(--white);
+    padding: 12px 20px;
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110%;
+    color: var(--text);
+  }
+
+  // .how-to-play__link-info
+
+  &__link-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  // .how-to-play__link-img
+
+  &__link-img {}
+
+  // .how-to-play__link-text
+
+  &__link-text {}
+
+  // .how-to-play__link-arrow
+
+  &__link-arrow {
+    transform: rotate(-90deg);
+  }
+}

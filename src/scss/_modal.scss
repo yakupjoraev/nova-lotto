@@ -1,0 +1,212 @@
+// ************************ Модальное окно ************************ //
+// ************************ Кнопка вызова модального окна ************************ //
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: -200%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+  &.show {
+    top: 0;
+    opacity: 1;
+  }
+
+  &__content {
+    position: relative;
+    background-color: var(--white);
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    max-width: 540px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    padding-right: 40px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    margin: 0;
+  }
+
+  &__body {}
+
+  &__footer {}
+
+  &__submit {
+    min-height: 50px;
+  }
+}
+
+// Модальное окно, которое должно отображаться по центру
+.modal.modal-center {
+  &.show {
+    align-items: center;
+  }
+
+  .modal__content {
+    border-radius: 16px;
+    max-width: 450px;
+  }
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.multipurchase {
+  &__row {
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 4px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110%;
+    color: var(--black);
+  }
+
+  &__sublabel {
+    display: block;
+    margin-bottom: 12px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 110%;
+    color: #696969;
+  }
+
+  &__counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 14px 20px;
+    margin: 10px 0;
+    height: 48px;
+    background-color: #eee;
+
+    &-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      width: 22px;
+      height: 22px;
+    }
+
+    &-value {
+      flex-grow: 1;
+      font-family: var(--font-family);
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 100%;
+      text-align: center;
+      color: var(--black);
+    }
+
+    &-badge {
+      padding: 4px;
+      background-color: var(--main-purple);
+      border-radius: 3px;
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 11px;
+      line-height: 100%;
+      text-align: center;
+      color: var(--white);
+    }
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  &__row-justufy {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    background-color: #eee;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--black);
+    cursor: pointer;
+
+    transition: all 0.2s;
+
+    &--active {
+      background-color: var(--main-yellow);
+      font-weight: 500;
+    }
+
+  }
+
+  &__info-icon {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #8057e3;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+
+
+}

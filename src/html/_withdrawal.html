@@ -1,0 +1,117 @@
+<div class="deposit deposit-withdrawal">
+  <div class="deposit__inner">
+    <h1 class="title">ВЫВОД СРЕДСТВ</h1>
+
+    <div class="deposit-withdrawal__balance block">
+      <span class="deposit-withdrawal__balance-title">Достпуно для вывода</span>
+      <span class="deposit-withdrawal__balance-amount">54.50 USDT</span>
+    </div>
+
+    <form action="#" class="deposit__form block">
+      <div class="deposit__form-inner">
+        <div class="deposit__form-btns">
+          <button type="button" class="deposit__form-btn active" data-btn="crypto">
+            <span>Криптовалюта</span>
+          </button>
+          <button type="button" class="deposit__form-btn" data-btn="fiat">
+            <span>Фиат</span>
+          </button>
+        </div>
+
+        <div class="deposit__contents">
+          <div class="deposit__content active" data-content="crypto">
+            <div class="deposit__content-inner">
+              <div class="deposit__content-item">
+                <div class="deposit__field">
+                  <label>Выберите криптовалюту</label>
+                  <div class="deposit__select">
+                    <div class="deposit__select-selected">
+                      <img src="./img/tokens/tether.svg" alt="Tether USDT">
+                      <span>Tether USDT</span>
+                    </div>
+                    <div class="deposit__select-arrow">
+                      <img src="./img/icons/arrow-down.svg" alt="arrow">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="deposit__field">
+                  <label>Сумма пополнения</label>
+                  <div class="deposit__amount">
+                    <input type="number" value="2">
+                    <span class="deposit__amount-currency">USDT</span>
+                  </div>
+                  <div class="deposit__minimal">
+                    <span>Минимальная сумма пополнения: 0.5 USDT</span>
+                  </div>
+                </div>
+
+                <div class="deposit__field">
+                  <label>Адрес</label>
+                  <div class="deposit__address">
+                    <input type="text" value="0x55aad5agg5ghs5fg4s5d4fge5df7sf" readonly>
+                  </div>
+                </div>
+
+                <div class="deposit__payment-btn">
+                  <button type="button" class="btn-primary">Запросить вывод</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="deposit__content" data-content="fiat">
+            <div class="deposit__content-inner">
+              <div class="deposit__content-item">
+                <div class="deposit__field">
+                  <label>Выберите платежную систему</label>
+                  <div class="deposit__select">
+                    <div class="deposit__select-selected">
+                      <img src="./img/icons/unionpay.png" alt="UnionPay">
+                      <span>UnionPay</span>
+                    </div>
+                    <div class="deposit__select-arrow">
+                      <img src="./img/icons/arrow-down.svg" alt="arrow">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="deposit__field">
+                  <label>Сумма пополнения</label>
+                  <div class="deposit__amount">
+                    <input type="number" value="2">
+                    <span class="deposit__amount-currency">USDT</span>
+                  </div>
+                  <div class="deposit__minimal">
+                    <span>Максимальная сумма пополнения: 0.5 USDT</span>
+                  </div>
+                </div>
+
+                <div class="deposit__field">
+                  <label>Реквизиты карты</label>
+                  <div class="deposit__amount">
+                    <input type="text" value="1111 2222 3333 4444">
+                  </div>
+
+                  <div class="deposit__requisites">
+                    <div class="deposit__amount">
+                      <input type="text" value="DD.MM.YYYY">
+                    </div>
+
+                    <div class="deposit__amount">
+                      <input type="text" value="CVC">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="deposit__payment-btn">
+                  <button type="button" class="btn-primary">Запросить вывод</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

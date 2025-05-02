@@ -1,0 +1,25 @@
+// === SCSS Imports ===
+@import './vars';
+@import './reset';
+@import './base';
+@import './global';
+@import './fonts';
+
+// === Components Imports ===
+@import './header';
+@import './footer';
+@import './modal';
+@import './dates';
+@import './results-draw';
+@import './deposit';
+@import './withdrawal';
+@import './search';
+@import './faq';
+@import './winnings-table';
+@import './how-to-play';
+@import './account';
+@import './hero';
+@import './multipurchase';
+@import './rules';
+// === Libs Imports ===
+// @import './libs/libs';
