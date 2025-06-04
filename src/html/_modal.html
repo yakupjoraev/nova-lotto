@@ -61,7 +61,12 @@
               Количество чисел в билете
             </div>
 
-            <span class="multipurchase__counter-badge">x24</span>
+            <button type="button" class="hero__tirages-slide-random" data-tooltip-trigger="right-tooltip-21">
+              <div class="hero__tirages-slide-random-fiol">
+                <sup>x</sup>
+                <span>21</span>
+              </div>
+            </button>
           </div>
 
 
@@ -76,9 +81,10 @@
           <div class="multipurchase__row-justufy">
             <div class="multipurchase__label">
               Множитель
+              <img width="16" src="./img/icons/squares.svg" alt="squares" data-tooltip-trigger="right-tooltip">
               <span class="multipurchase__sublabel">Повтор комбинаций в выбранных тиражах</span>
             </div>
-            <div class="multipurchase__info-icon"><img width="20" src="./img/icons/info-2.svg" alt="info"></div>
+            <!-- <div class="multipurchase__info-icon"><img width="20" src="./img/icons/info-2.svg" alt="info"></div> -->
           </div>
 
 
@@ -101,6 +107,63 @@
   </div>
 </div>
 
+<!-- Модальное окно покупки билета -->
+<div class="modal" id="pay-modal">
+  <div class="modal__content">
+    <div class="modal__header">
+      <h2 class="modal__title title">оплата билета </h2>
+      <button class="close-modal-btn">
+        <img src="./img/icons/close.svg" alt="Закрыть">
+      </button>
+    </div>
+
+    <div class="modal__body">
+      <form action="#" class="pay-modal">
+        <div class="pay-modal__row">
+          <label class="pay-modal__label" for="payment">
+            Способ оплаты
+          </label>
+
+          <div class="pay-modal__payment">
+            <div class="payment-select-wrapper">
+              <select name="payment-select" id="payment-select">
+                <option value="1">Криптовалюта</option>
+                <option value="2">Фиат</option>
+                <option value="3">Звезды Телеграм</option>
+              </select>
+
+              <img class="payment-select-wrapper__arrow" src="./img/icons/arrow-accordion.svg" alt="arrow-accordion">
+            </div>
+          </div>
+        </div>
+
+        <div class="pay-modal__row">
+          <label class="pay-modal__label" for="payment-amount">
+            Сумма к оплате
+          </label>
+
+          <div class="pay-modal__amount">
+            <div class="pay-modal__payment">
+              <input type="text" name="payment-amount" class="pay-modal__payment-input" id="payment-amount"
+                placeholder="" value="100">
+              <div class="pay-modal__payment-text">USDT</div>
+
+              <!-- Пока скрыл, когда нужно будет добавить звезды -->
+              <div class="pay-modal__payment-text" hidden><img width="20" src="./img/icons/tg-star.svg" alt="tg-star">
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="modal__footer">
+      <button class="btn-primary modal__submit">КУПИТЬ БИЛЕТ</button>
+    </div>
+  </div>
+</div>
+
+
 <!-- Пример второго модального окна -->
 <div class="modal" id="modal1">
   <div class="modal__content">
@@ -118,5 +181,176 @@
     <div class="modal__footer">
       <button class="btn-primary modal__submit">Подтвердить</button>
     </div>
+  </div>
+</div>
+
+<!-- Модальное окно селекта -->
+<div class="modal modal-select" id="select-modal">
+  <div class="modal__content modal-select__content">
+    <div class="modal__header modal-select__header">
+      <h3 class="modal__title modal-select__title">Выберите криптовалюту</h3>
+      <button class="close-modal-btn">
+        <img src="./img/icons/close.svg" alt="Закрыть">
+      </button>
+    </div>
+
+    <div class="modal__body modal-select__body">
+      <div class="modal-select__list">
+        <div class="modal-select__item active" data-value="tether" data-image="./img/tokens/tether.svg">
+          <img src="./img/tokens/tether.svg" alt="Tether USDT">
+          <span class="modal-select__item-text">Tether USDT</span>
+        </div>
+
+        <div class="modal-select__item" data-value="bitcoin" data-image="./img/tokens/bitcoin.svg">
+          <img src="./img/tokens/tether.svg" alt="Bitcoin">
+          <span class="modal-select__item-text">Bitcoin (BTC)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="ethereum" data-image="./img/tokens/ethereum.svg">
+          <img src="./img/tokens/tether.svg" alt="Ethereum">
+          <span class="modal-select__item-text">Ethereum (ETH)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="litecoin" data-image="./img/tokens/litecoin.svg">
+          <img src="./img/tokens/tether.svg" alt="Litecoin">
+          <span class="modal-select__item-text">Litecoin (LTC)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="usdc" data-image="./img/tokens/usdc.svg">
+          <img src="./img/tokens/tether.svg" alt="USD Coin">
+          <span class="modal-select__item-text">USD Coin (USDC)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="ethereum" data-image="./img/tokens/ethereum.svg">
+          <img src="./img/tokens/tether.svg" alt="Ethereum">
+          <span class="modal-select__item-text">Ethereum (ETH)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="litecoin" data-image="./img/tokens/litecoin.svg">
+          <img src="./img/tokens/tether.svg" alt="Litecoin">
+          <span class="modal-select__item-text">Litecoin (LTC)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="usdc" data-image="./img/tokens/usdc.svg">
+          <img src="./img/tokens/tether.svg" alt="USD Coin">
+          <span class="modal-select__item-text">USD Coin (USDC)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="ethereum" data-image="./img/tokens/ethereum.svg">
+          <img src="./img/tokens/tether.svg" alt="Ethereum">
+          <span class="modal-select__item-text">Ethereum (ETH)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="litecoin" data-image="./img/tokens/litecoin.svg">
+          <img src="./img/tokens/tether.svg" alt="Litecoin">
+          <span class="modal-select__item-text">Litecoin (LTC)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="usdc" data-image="./img/tokens/usdc.svg">
+          <img src="./img/tokens/tether.svg" alt="USD Coin">
+          <span class="modal-select__item-text">USD Coin (USDC)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="ethereum" data-image="./img/tokens/ethereum.svg">
+          <img src="./img/tokens/tether.svg" alt="Ethereum">
+          <span class="modal-select__item-text">Ethereum (ETH)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="litecoin" data-image="./img/tokens/litecoin.svg">
+          <img src="./img/tokens/tether.svg" alt="Litecoin">
+          <span class="modal-select__item-text">Litecoin (LTC)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="usdc" data-image="./img/tokens/usdc.svg">
+          <img src="./img/tokens/tether.svg" alt="USD Coin">
+          <span class="modal-select__item-text">USD Coin (USDC)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="ethereum" data-image="./img/tokens/ethereum.svg">
+          <img src="./img/tokens/tether.svg" alt="Ethereum">
+          <span class="modal-select__item-text">Ethereum (ETH)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="litecoin" data-image="./img/tokens/litecoin.svg">
+          <img src="./img/tokens/tether.svg" alt="Litecoin">
+          <span class="modal-select__item-text">Litecoin (LTC)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="usdc" data-image="./img/tokens/usdc.svg">
+          <img src="./img/tokens/tether.svg" alt="USD Coin">
+          <span class="modal-select__item-text">USD Coin (USDC)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="ethereum" data-image="./img/tokens/ethereum.svg">
+          <img src="./img/tokens/tether.svg" alt="Ethereum">
+          <span class="modal-select__item-text">Ethereum (ETH)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="litecoin" data-image="./img/tokens/litecoin.svg">
+          <img src="./img/tokens/tether.svg" alt="Litecoin">
+          <span class="modal-select__item-text">Litecoin (LTC)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="usdc" data-image="./img/tokens/usdc.svg">
+          <img src="./img/tokens/tether.svg" alt="USD Coin">
+          <span class="modal-select__item-text">USD Coin (USDC)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="ethereum" data-image="./img/tokens/ethereum.svg">
+          <img src="./img/tokens/tether.svg" alt="Ethereum">
+          <span class="modal-select__item-text">Ethereum (ETH)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="litecoin" data-image="./img/tokens/litecoin.svg">
+          <img src="./img/tokens/tether.svg" alt="Litecoin">
+          <span class="modal-select__item-text">Litecoin (LTC)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="usdc" data-image="./img/tokens/usdc.svg">
+          <img src="./img/tokens/tether.svg" alt="USD Coin">
+          <span class="modal-select__item-text">USD Coin (USDC)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="ethereum" data-image="./img/tokens/ethereum.svg">
+          <img src="./img/tokens/tether.svg" alt="Ethereum">
+          <span class="modal-select__item-text">Ethereum (ETH)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="litecoin" data-image="./img/tokens/litecoin.svg">
+          <img src="./img/tokens/tether.svg" alt="Litecoin">
+          <span class="modal-select__item-text">Litecoin (LTC)</span>
+        </div>
+
+        <div class="modal-select__item" data-value="usdc" data-image="./img/tokens/usdc.svg">
+          <img src="./img/tokens/tether.svg" alt="USD Coin">
+          <span class="modal-select__item-text">USD Coin (USDC)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Адаптивные тултипы -->
+<div class="tooltip" data-tooltip="right-tooltip">
+  <div class="tooltip__content">
+    <strong>Множитель</strong> — увеличивает число одинаковых комбинаций в тиражах. Больше множитель — выше шанс на
+    победу!
+
+    <button type="button" class="tooltip__btn">
+      <img src="./img/icons/close.svg" alt="close">
+    </button>
+  </div>
+</div>
+
+<div class="tooltip" data-tooltip="right-tooltip-21">
+  <div class="tooltip__content">
+    <strong>21 комбинация участвует
+      в розыгрыше</strong>
+    <br>
+    Больше чисел — больше комбинаций и выше шанс на победу!
+
+    <button type="button" class="tooltip__btn">
+      <img src="./img/icons/close.svg" alt="close">
+    </button>
   </div>
 </div>

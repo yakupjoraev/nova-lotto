@@ -60,6 +60,10 @@
       line-height: 130%;
       color: var(--text);
     }
+
+    &+& {
+      margin-top: 10px;
+    }
   }
 
   &__select {
@@ -214,4 +218,18 @@
       }
     }
   }
+}
+
+.deposit__field-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.deposit__amount-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: 0;
 }

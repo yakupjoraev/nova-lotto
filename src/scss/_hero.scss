@@ -96,7 +96,7 @@
   // .hero__tirages-slide-top
 
   &__tirages-slide-top {
-    padding: 16px 16px 10px;
+    padding: 16px 16px 10px 30px;
     border-radius: 12px;
     background-color: #dfdfdf;
     transition: background-color 0.3s ease-in-out;
@@ -138,11 +138,32 @@
   // .hero__tirages-slide-sum
 
   &__tirages-slide-sum {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
     font-family: var(--third-family);
     font-weight: 700;
     font-size: 40px;
     text-transform: uppercase;
     color: var(--text);
+  }
+
+  // .hero__tirages-slide-sum-img
+
+  &__tirages-slide-sum-img {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+  }
+
+  // .hero__tirages-slide-sum-text
+
+  &__tirages-slide-sum-text {
+    margin-top: auto;
+    margin-left: 10px;
+    margin-bottom: 3px;
+    font-weight: 400;
+    font-size: 24px;
   }
 
   // .hero__tirages-slide-line
@@ -188,24 +209,47 @@
     background-color: transparent;
     border: none;
     outline: 0;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 110%;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: var(--main-purple);
   }
 
   // .hero__tirages-slide-random-fiol
 
   &__tirages-slide-random-fiol {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
-    border-radius: 3px;
-    background: var(--main-purple);
+    background-image: url(../img/icons/star-x21.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
 
     font-family: var(--font-family);
     font-weight: 700;
-    font-size: 11px;
+    font-size: 7px;
     line-height: 100%;
     text-align: center;
     color: var(--white);
+
+    sup {
+      position: absolute;
+      top: 8px;
+      left: 4px;
+    }
+
+    span {
+      margin-bottom: -3px;
+    }
   }
 
   // .hero__tirages-table

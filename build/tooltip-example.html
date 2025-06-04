@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример адаптивного тултипа</title>
+  <link rel="stylesheet" href="../build/css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <main class="main">
+      <div class="block">
+        <h2 class="title">Примеры адаптивных тултипов</h2>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+          <span>Тултип слева</span>
+          <button type="button" data-tooltip-trigger="left-tooltip"
+            style="background: #5d14d0; color: white; padding: 8px 12px; border: none; border-radius: 4px; cursor: pointer;">
+            Нажми меня
+          </button>
+        </div>
+
+        <div style="display: flex; justify-content: flex-start; align-items: center; margin-bottom: 30px;">
+          <button type="button" data-tooltip-trigger="right-tooltip"
+            style="background: #fbbf24; color: black; padding: 8px 12px; border: none; border-radius: 4px; cursor: pointer;">
+            Тултип справа
+          </button>
+          <span style="margin-left: 20px;">Кнопка слева</span>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 30px;">
+          <button type="button" data-tooltip-trigger="bottom-tooltip"
+            style="background: #10b981; color: white; padding: 8px 12px; border: none; border-radius: 4px; cursor: pointer;">
+            Тултип снизу
+          </button>
+        </div>
+
+        <div style="margin-top: 100px; text-align: center;">
+          <button type="button" data-tooltip-trigger="top-tooltip"
+            style="background: #ef4444; color: white; padding: 8px 12px; border: none; border-radius: 4px; cursor: pointer;">
+            Тултип сверху
+          </button>
+        </div>
+
+        <div style="margin: 50px 0; padding: 20px; background: #f0f0f0; border-radius: 8px;">
+          <h3>Особенности адаптивного тултипа:</h3>
+          <ul style="margin-left: 20px; line-height: 1.6;">
+            <li>Автоматическое позиционирование в зависимости от доступного места</li>
+            <li>Закрытие по клику вне тултипа</li>
+            <li>Закрытие по кнопке крестика</li>
+            <li>Закрытие по клавише Escape</li>
+            <li>Адаптивные размеры для мобильных устройств</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Адаптивные тултипы -->
+  <div class="tooltip" data-tooltip="left-tooltip">
+    <div class="tooltip__content">
+      Этот тултип должен открываться слева от кнопки, если есть место. Если места нет, он адаптивно изменит свою
+      позицию.
+
+      <button type="button" class="tooltip__btn">
+        <img src="../img/icons/close.svg" alt="close">
+      </button>
+    </div>
+  </div>
+
+  <div class="tooltip" data-tooltip="right-tooltip">
+    <div class="tooltip__content">
+      Этот тултип открывается справа от кнопки. Содержит полезную информацию для пользователя.
+
+      <button type="button" class="tooltip__btn">
+        <img src="../img/icons/close.svg" alt="close">
+      </button>
+    </div>
+  </div>
+
+  <div class="tooltip" data-tooltip="bottom-tooltip">
+    <div class="tooltip__content">
+      Тултип снизу с длинным текстом. Этот текст демонстрирует, как тултип адаптируется к содержимому разной длины и
+      автоматически переносит текст.
+
+      <button type="button" class="tooltip__btn">
+        <img src="../img/icons/close.svg" alt="close">
+      </button>
+    </div>
+  </div>
+
+  <div class="tooltip" data-tooltip="top-tooltip">
+    <div class="tooltip__content">
+      <strong>Важная информация!</strong><br>
+      Этот тултип показывается сверху от кнопки и содержит важную информацию.
+
+      <button type="button" class="tooltip__btn">
+        <img src="../img/icons/close.svg" alt="close">
+      </button>
+    </div>
+  </div>
+
+  <script src="./js/scripts.min.js"></script>
+</body>
+
+</html>

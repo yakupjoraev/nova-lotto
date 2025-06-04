@@ -54,6 +54,9 @@ initAccordion();
 
 // Инициализация Swiper слайдеров для hero секции
 function initHeroSliders() {
+  const container = document.querySelector('.hero');
+
+  if (!container) return;
   // Главный слайдер
   const heroSlider = new Swiper('.hero__slider', {
     slidesPerView: 1,

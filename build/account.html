@@ -52,7 +52,7 @@
           <p class="account__profile-name">John Johnson</p>
 
           <div class="account__profile-rangs">
-            <div class="account__profile-rang account__profile-rang--bronze">
+            <div class="account__profile-rang">
               <img width="30" src="./img/icons/rang-1.png" alt="rang icon">
             </div>
 
@@ -62,10 +62,6 @@
 
             <div class="account__profile-rang">
               <img width="30" src="./img/icons/rang-3.png" alt="rang icon">
-            </div>
-
-            <div class="account__profile-rang">
-              <img width="30" src="./img/icons/rang-4.png" alt="rang icon">
             </div>
           </div>
 
@@ -81,7 +77,11 @@
     </div>
     <div class="account__balance block">
       <p class="account__balance-title">Баланс кошелька</p>
-      <p class="account__balance-amount">54.50 USDT</p>
+      <div class="account__balance-amount">
+        <img class="account__balance-amount-img" width="26" src="./img/tokens/tether.svg" alt="tether icon">
+        <span class="account__balance-amount-text">54.50 USDT</span>
+
+      </div>
     </div>
 
     <div class="account__actions">
@@ -100,7 +100,7 @@
       <a class="account__list-link" href="#">
         <div class="account__list-info">
           <img class="account__list-img" src="./img/icons/rules.svg" alt="rules icon">
-          <p class="account__list-text">История ставок</p>
+          <p class="account__list-text">Мои билеты</p>
         </div>
 
         <img class="account__list-arrow" src="./img/icons/arrow-accordion.svg" alt="arrow icon">
@@ -109,7 +109,7 @@
       <a class="account__list-link" href="#">
         <div class="account__list-info">
           <img class="account__list-img" src="./img/icons/winnings.svg" alt="winnings icon">
-          <p class="account__list-text">История выигрышей</p>
+          <p class="account__list-text">Мои призы</p>
         </div>
 
         <img class="account__list-arrow" src="./img/icons/arrow-accordion.svg" alt="arrow icon">
@@ -137,6 +137,15 @@
         <div class="account__list-info">
           <img class="account__list-img" src="./img/icons/faq.svg" alt="faq icon">
           <p class="account__list-text">Как играть?</p>
+        </div>
+
+        <img class="account__list-arrow" src="./img/icons/arrow-accordion.svg" alt="arrow icon">
+      </a>
+
+      <a class="account__list-link" href="#">
+        <div class="account__list-info">
+          <img class="account__list-img" src="./img/icons/cashing.svg" alt="cashing icon">
+          <p class="account__list-text">Как оплатить?</p>
         </div>
 
         <img class="account__list-arrow" src="./img/icons/arrow-accordion.svg" alt="arrow icon">

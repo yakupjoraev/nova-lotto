@@ -19,7 +19,7 @@
               <div class="deposit__content-item">
                 <div class="deposit__field">
                   <label>Выберите криптовалюту</label>
-                  <div class="deposit__select">
+                  <div class="deposit__select open-modal-btn" data-modal-id="select-modal">
                     <div class="deposit__select-selected">
                       <img src="./img/tokens/tether.svg" alt="Tether USDT">
                       <span>Tether USDT</span>
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="deposit__field">
-                  <label>Адрес</label>
+                  <label>Адрес для пополнения Tether USDT (TRC20)</label>
                   <div class="deposit__address">
                     <input type="text" value="0x55aad5agg5ghs5fg4s5d4fge5df7sf" readonly>
                     <button type="button" class="deposit__copy">
@@ -63,7 +63,7 @@
               <div class="deposit__content-item">
                 <div class="deposit__field">
                   <label>Выберите платежную систему</label>
-                  <div class="deposit__select">
+                  <div class="deposit__select open-modal-btn" data-modal-id="select-modal">
                     <div class="deposit__select-selected">
                       <img src="./img/icons/unionpay.png" alt="UnionPay">
                       <span>UnionPay</span>
@@ -75,7 +75,15 @@
                 </div>
 
                 <div class="deposit__field">
-                  <label>Сумма пополнения</label>
+                  <div class="deposit__field-inner">
+                    <label>Сумма пополнения</label>
+
+                    <button type="button" class="deposit__amount-btn" data-tooltip-trigger="right-tooltip-deposit-info">
+                      <img width="20" src="./img/icons/info-3.svg" alt="info">
+                    </button>
+                  </div>
+
+
                   <div class="deposit__amount">
                     <input type="number" value="2">
                     <span class="deposit__amount-currency">USDT</span>
@@ -94,5 +102,17 @@
         </div>
       </div>
     </form>
+  </div>
+</div>
+
+<!-- Адаптивные тултипы -->
+<div class="tooltip" data-tooltip="right-tooltip-deposit-info">
+  <div class="tooltip__content">
+    <strong>Пополнение картой</strong>
+    <br>
+    <p>Сумма будет конвертирована в USDT по курсу платёжной системы</p>
+    <button type="button" class="tooltip__btn">
+      <img src="./img/icons/close.svg" alt="close">
+    </button>
   </div>
 </div>

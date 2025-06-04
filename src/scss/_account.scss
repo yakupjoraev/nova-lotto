@@ -45,7 +45,13 @@
 
   // .account__profile-name
 
-  &__profile-name {}
+  &__profile-name {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110%;
+    color: var(--text);
+  }
 
   // .account__profile-rangs
 
@@ -108,6 +114,10 @@
   // .account__balance-amount
 
   &__balance-amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     font-family: var(--third-family);
     font-weight: 700;
     font-size: 32px;
