@@ -1,0 +1,526 @@
+.win-history {
+
+  // .win-history__inner
+  &__inner {}
+
+  // .win-history__header
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 24px;
+
+    .title {
+      margin-bottom: 0;
+    }
+  }
+
+  // .win-history__prizes
+  &__prizes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  // .win-history__prize
+  &__prize {
+    background-image: url('../img/win-history-item-bg.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    overflow: hidden;
+
+    &.active {
+      .win-history__prize-content {
+        padding: 0 20px 20px;
+        max-height: 1000px;
+      }
+
+      .win-history__prize-btn {
+        img {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  // .win-history__prize-header
+  &__prize-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px 0;
+    cursor: pointer;
+  }
+
+  // .win-history__prize-main
+  &__prize-main {
+    padding: 16px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  // .win-history__prize-status
+  &__prize-status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--white);
+
+    &--calculated {
+      background-color: #10B981;
+    }
+
+    &--pending {
+      background-color: var(--main-yellow);
+    }
+
+    &--lost {
+      background-color: #EF4444;
+    }
+  }
+
+  // .win-history__prize-info
+  &__prize-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 0 1 50%;
+    justify-content: space-between;
+  }
+
+  // .win-history__prize-number
+  &__prize-number {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 110%;
+    color: var(--text);
+  }
+
+  // .win-history__prize-btn
+  &__prize-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    padding: 4px;
+
+    img {
+      transition: transform 0.3s ease-in-out;
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  // .win-history__prize-content
+  &__prize-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  }
+
+  // .win-history__prize-details
+  &__prize-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  // .win-history__prize-date
+  &__prize-date {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: var(--text);
+    text-align: center;
+  }
+
+  // .win-history__prize-numbers
+  &__prize-numbers {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+
+  // .win-history__prize-number-item
+  &__prize-number-item {
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 100%;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(140deg, #b2b2b2 0%, #f5f5f5 100%);
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--white);
+
+    &--gold {
+      background: linear-gradient(140deg, #fbbf24 0%, #f5da75 100%);
+    }
+
+    &--win {
+      background: linear-gradient(140deg, #10b981 0%, #52f4be 100%);
+    }
+
+    &--inactive {
+      background: linear-gradient(140deg, #b2b2b2 0%, #f5f5f5 100%);
+      color: var(--white);
+    }
+  }
+
+  // .win-history__prize-win-info
+  &__prize-win-info {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    margin: 8px 0;
+
+    span {
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 110%;
+      color: var(--white);
+    }
+  }
+
+  // .win-history__prize-result
+  &__prize-result {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+
+  // .win-history__prize-result-main
+  &__prize-result-main {
+    height: 60px;
+    width: 100%;
+    padding: 6px 12px;
+    background-color: transparent;
+    background-image: url('../img/icons/win-btn-bg.png');
+    background-size: 100% 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      display: block;
+      margin-top: -4px;
+      font-family: var(--third-family);
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 110%;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      color: #fff;
+    }
+
+    @media (max-width: 540px) {
+      height: 40px;
+    }
+
+    &--large {
+      padding: 16px 30px;
+    }
+  }
+
+  // .win-history__prize-direct
+  &__prize-direct {}
+
+  // .win-history__prize-direct-btn
+  &__prize-direct-btn {
+    height: 60px;
+    width: 100%;
+    padding: 6px 12px;
+    background-color: transparent;
+    background-image: url('../img/icons/win-btn-bg.png');
+    background-size: 100% 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    span {
+      display: block;
+      margin-top: -4px;
+    }
+
+    @media (max-width: 540px) {
+      height: 40px;
+    }
+  }
+
+  // .win-history__prize-extra
+  &__prize-extra {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  // .win-history__prize-extra-item
+  &__prize-extra-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 110%;
+    color: var(--text);
+
+    & span:first-child {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    .hero__tirages-slide-random {
+      margin-left: 2px;
+    }
+  }
+
+  // .win-history__prize-star
+  &__prize-star {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+
+    span {
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text);
+    }
+  }
+
+  // .win-history__prize-actions
+  &__prize-actions {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  // .win-history__prize-actions-repeat
+  &__prize-actions-repeat {
+    flex: 1;
+  }
+
+  // .win-history__prize-actions-share
+  &__prize-actions-share {
+    width: 100%;
+    height: 24px;
+    border-radius: 8px;
+    padding: 4px 16px;
+    border: 1px solid var(--main-purple);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    img {
+      margin-left: 4px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  // .win-history__prize-tickets
+  &__prize-tickets {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+  }
+
+  // .win-history__prize-tickets-header
+  &__prize-tickets-header {
+    margin: -16px -16px 0;
+    padding: 10px;
+    border-radius: 12px 12px 0 0;
+    background: var(--main-purple);
+    font-family: var(--third-family);
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 110%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+  }
+
+  // .win-history__prize-ticket-item
+  &__prize-ticket-item {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 110%;
+    color: var(--text);
+
+    &--subtext {
+      font-weight: 400;
+      font-size: 14px;
+      color: #a4a4a4;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #dfdfdf;
+    }
+  }
+
+  // .win-history__prize-ticket-item-info
+  &__prize-ticket-item-info {
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #a4a4a4;
+  }
+
+  // .win-history__prize-expanded
+  &__prize-expanded {
+    display: flex;
+    flex-direction: column;
+    // gap: 12px;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: var(--white);
+  }
+
+  // .win-history__prize-expanded-header
+  &__prize-expanded-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    // flex-wrap: wrap;
+    margin: -16px -16px 0;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 12px 12px 0 0;
+    background: var(--main-purple);
+    font-family: var(--third-family);
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 110%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+
+    .hero__tirages-slide-random-fiol {
+      color: var(--text);
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='22' viewBox='0 0 24 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 0L16.0205 6.46632L23.4127 8.2918L18.5052 14.1137L19.0534 21.7082L12 18.84L4.94658 21.7082L5.49477 14.1137L0.587322 8.2918L7.97955 6.46632L12 0Z' fill='%23ffffff'/%3E%3C/svg%3E%0A");
+      border-bottom: 0;
+      text-decoration: none;
+
+      sup {
+        color: var(--text);
+      }
+    }
+  }
+
+  // .win-history__prize-expanded-text
+  &__prize-expanded-text {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: var(--text);
+    text-align: center;
+    margin: 0;
+  }
+
+  // .win-history__prize-expanded-subtitle
+  &__prize-expanded-subtitle {
+    margin: 8px 0 4px;
+
+    span {
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 110%;
+      color: var(--text);
+    }
+  }
+
+  // .win-history__prize-expanded-item-info
+  &__prize-expanded-item-info {
+    margin-top: 2px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #a4a4a4;
+
+  }
+
+  // .win-history__prize-expanded-results
+  &__prize-expanded-results {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  // .win-history__prize-expanded-item
+  &__prize-expanded-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #a4a4a4;
+    padding: 12px 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #dfdfdf;
+    }
+  }
+}

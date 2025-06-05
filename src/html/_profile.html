@@ -1,0 +1,109 @@
+<div class="profile">
+  <div class="profile__inner">
+    <h1 class="title">НАСТРОЙКИ ПРОФИЛЯ</h1>
+
+    <!-- Аватар -->
+    <div class="profile__avatar-section block">
+      <h2 class="profile__section-title">АВАТАР</h2>
+
+      <div class="profile__avatar-container">
+        <div class="profile__avatar">
+          <img src="./img/user.png" alt="Аватар профиля">
+          <div class="profile__avatar-upload">
+            <img width="48" height="48" src="./img/icons/upload.svg" alt="Загрузить">
+          </div>
+        </div>
+
+        <div class="profile__avatar-info">
+          <p class="profile__avatar-text">Редактировать аватар</p>
+          <p class="profile__avatar-subtext">Изображение должно быть разрешением 512*512 пикс. Формат изображения:
+            .JPEG, .JPG, .PNG, .PDF, .TIF</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Личные данные -->
+    <div class="profile__personal-section block">
+      <h2 class="profile__section-title">ЛИЧНЫЕ ДАННЫЕ</h2>
+
+      <form class="profile__form">
+        <div class="profile__field">
+          <label class="profile__label">Имя пользователя</label>
+          <div class="profile__input-wrapper">
+            <input type="text" class="profile__input" value="John Johnson">
+            <button type="button" class="profile__edit-btn">
+              <img src="./img/icons/check-yellow.svg" alt="check">
+            </button>
+          </div>
+        </div>
+
+        <div class="profile__field">
+          <label class="profile__label">Email (Опционально)</label>
+          <div class="profile__input-wrapper">
+            <input type="email" class="profile__input" value="john_johnson@gmail.com">
+            <button type="button" class="profile__edit-btn">
+              <img src="./img/icons/check-yellow.svg" alt="check">
+            </button>
+          </div>
+        </div>
+
+        <p class="profile__notice">
+          Укажи свой email и получи в <span>подарок 5 лотерейных билетов</span>
+        </p>
+      </form>
+    </div>
+
+    <!-- Уведомления -->
+    <div class="profile__notifications-section block">
+      <div class="profile__notifications-header">
+        <h2 class="profile__section-title">УВЕДОМЛЕНИЯ</h2>
+        <button type="button" class="profile__disable-all">Отключить все</button>
+      </div>
+
+      <div class="profile__notifications-list">
+        <div class="profile__notification-item">
+          <span class="profile__notification-text">Сообщить о новостях</span>
+          <label class="profile__toggle">
+            <input type="checkbox" checked>
+            <span class="profile__toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="profile__notification-item">
+          <span class="profile__notification-text">Сообщить об акциях и бонусах</span>
+          <label class="profile__toggle">
+            <input type="checkbox" checked>
+            <span class="profile__toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="profile__notification-item">
+          <span class="profile__notification-text">Сообщить, если выиграл</span>
+          <label class="profile__toggle">
+            <input type="checkbox" checked>
+            <span class="profile__toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="profile__notification-item">
+          <span class="profile__notification-text">Сообщить результат тиража (всегда)</span>
+          <label class="profile__toggle">
+            <input type="checkbox">
+            <span class="profile__toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="profile__notification-item">
+          <span class="profile__notification-text">Отправлять уведомления на электронную почту (если привязана)</span>
+          <label class="profile__toggle">
+            <input type="checkbox" checked>
+            <span class="profile__toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Кнопка сохранения -->
+    <button type="button" class="btn-primary profile__save-btn">СОХРАНИТЬ ИЗМЕНЕНИЯ</button>
+  </div>
+</div>

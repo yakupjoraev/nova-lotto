@@ -87,60 +87,118 @@ class AdaptiveTooltip {
     // Сбрасываем все классы позиционирования
     tooltip.classList.remove('tooltip--left', 'tooltip--right', 'tooltip--top', 'tooltip--bottom');
 
+    // Получаем координаты триггера относительно viewport
     const triggerRect = trigger.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+    // Переводим координаты триггера в абсолютные координаты документа
+    const triggerAbsolute = {
+      top: triggerRect.top + scrollTop,
+      left: triggerRect.left + scrollLeft,
+      right: triggerRect.right + scrollLeft,
+      bottom: triggerRect.bottom + scrollTop,
+      width: triggerRect.width,
+      height: triggerRect.height
+    };
+
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
-    const tooltipRect = tooltip.getBoundingClientRect();
 
-    // Определяем доступное пространство с каждой стороны
-    const spaceRight = viewportWidth - triggerRect.right;
-    const spaceLeft = triggerRect.left;
-    const spaceTop = triggerRect.top;
-    const spaceBottom = viewportHeight - triggerRect.bottom;
+    // Получаем размеры тултипа
+    tooltip.style.visibility = 'hidden';
+    tooltip.style.opacity = '0';
+    tooltip.style.display = 'block';
+    const tooltipRect = tooltip.getBoundingClientRect();
+    tooltip.style.display = '';
+    tooltip.style.visibility = '';
+    tooltip.style.opacity = '';
+
+    // Определяем доступное пространство с каждой стороны В ОБЛАСТИ ВИДИМОСТИ
+    const visibleTriggerTop = Math.max(0, triggerRect.top);
+    const visibleTriggerBottom = Math.min(viewportHeight, triggerRect.bottom);
+    const visibleTriggerLeft = Math.max(0, triggerRect.left);
+    const visibleTriggerRight = Math.min(viewportWidth, triggerRect.right);
+
+    const spaceRight = viewportWidth - visibleTriggerRight;
+    const spaceLeft = visibleTriggerLeft;
+    const spaceTop = visibleTriggerTop;
+    const spaceBottom = viewportHeight - visibleTriggerBottom;
+
+    // Минимальные отступы от краев экрана
+    const margin = 8;
+    const arrowOffset = 16; // расстояние от триггера до тултипа
 
     let position = 'right'; // по умолчанию
     let top, left;
 
-    // Определяем оптимальную позицию
-    if (spaceRight >= 280) {
+    // Определяем оптимальную позицию на основе доступного места в viewport
+    if (spaceRight >= tooltipRect.width + arrowOffset + margin) {
       // Размещаем справа
       position = 'right';
-      left = triggerRect.right + 12;
-      top = triggerRect.top + (triggerRect.height / 2) - (tooltipRect.height / 2);
-    } else if (spaceLeft >= 280) {
+      left = triggerAbsolute.right + arrowOffset;
+      top = triggerAbsolute.top + (triggerAbsolute.height / 2) - (tooltipRect.height / 2);
+    } else if (spaceLeft >= tooltipRect.width + arrowOffset + margin) {
       // Размещаем слева
       position = 'left';
-      left = triggerRect.left - tooltipRect.width - 12;
-      top = triggerRect.top + (triggerRect.height / 2) - (tooltipRect.height / 2);
-    } else if (spaceBottom >= 200) {
+      left = triggerAbsolute.left - tooltipRect.width - arrowOffset;
+      top = triggerAbsolute.top + (triggerAbsolute.height / 2) - (tooltipRect.height / 2);
+    } else if (spaceBottom >= tooltipRect.height + arrowOffset + margin) {
       // Размещаем снизу
       position = 'bottom';
-      left = triggerRect.left + (triggerRect.width / 2) - (tooltipRect.width / 2);
-      top = triggerRect.bottom + 12;
-    } else if (spaceTop >= 200) {
+      left = triggerAbsolute.left + (triggerAbsolute.width / 2) - (tooltipRect.width / 2);
+      top = triggerAbsolute.bottom + arrowOffset;
+    } else if (spaceTop >= tooltipRect.height + arrowOffset + margin) {
       // Размещаем сверху
       position = 'top';
-      left = triggerRect.left + (triggerRect.width / 2) - (tooltipRect.width / 2);
-      top = triggerRect.top - tooltipRect.height - 12;
+      left = triggerAbsolute.left + (triggerAbsolute.width / 2) - (tooltipRect.width / 2);
+      top = triggerAbsolute.top - tooltipRect.height - arrowOffset;
     } else {
-      // Если места мало, размещаем справа с корректировкой
-      position = 'right';
-      left = Math.min(triggerRect.right + 12, viewportWidth - tooltipRect.width - 10);
-      top = triggerRect.top + (triggerRect.height / 2) - (tooltipRect.height / 2);
+      // Если места мало везде, выбираем лучшую позицию и корректируем в области видимости
+      const maxSpace = Math.max(spaceRight, spaceLeft, spaceTop, spaceBottom);
+
+      if (maxSpace === spaceBottom || maxSpace === spaceTop) {
+        // Предпочитаем вертикальное размещение
+        if (spaceBottom >= spaceTop) {
+          position = 'bottom';
+          left = triggerAbsolute.left + (triggerAbsolute.width / 2) - (tooltipRect.width / 2);
+          top = triggerAbsolute.bottom + arrowOffset;
+        } else {
+          position = 'top';
+          left = triggerAbsolute.left + (triggerAbsolute.width / 2) - (tooltipRect.width / 2);
+          top = triggerAbsolute.top - tooltipRect.height - arrowOffset;
+        }
+      } else {
+        // Горизонтальное размещение
+        if (spaceRight >= spaceLeft) {
+          position = 'right';
+          left = triggerAbsolute.right + arrowOffset;
+          top = triggerAbsolute.top + (triggerAbsolute.height / 2) - (tooltipRect.height / 2);
+        } else {
+          position = 'left';
+          left = triggerAbsolute.left - tooltipRect.width - arrowOffset;
+          top = triggerAbsolute.top + (triggerAbsolute.height / 2) - (tooltipRect.height / 2);
+        }
+      }
     }
 
-    // Корректируем позицию, чтобы тултип не выходил за границы экрана
-    if (left < 10) {
-      left = 10;
+    // Корректируем позицию, чтобы тултип оставался в области видимости
+    const maxLeft = scrollLeft + viewportWidth - tooltipRect.width - margin;
+    const minLeft = scrollLeft + margin;
+    const maxTop = scrollTop + viewportHeight - tooltipRect.height - margin;
+    const minTop = scrollTop + margin;
+
+    if (left < minLeft) {
+      left = minLeft;
     }
-    if (left + tooltipRect.width > viewportWidth - 10) {
-      left = viewportWidth - tooltipRect.width - 10;
+    if (left > maxLeft) {
+      left = maxLeft;
     }
-    if (top < 10) {
-      top = 10;
+    if (top < minTop) {
+      top = minTop;
     }
-    if (top + tooltipRect.height > viewportHeight - 10) {
-      top = viewportHeight - tooltipRect.height - 10;
+    if (top > maxTop) {
+      top = maxTop;
     }
 
     // Применяем позицию

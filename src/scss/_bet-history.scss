@@ -1,0 +1,318 @@
+.bet-history {
+
+  // .bet-history__inner
+  &__inner {}
+
+  // .bet-history__header
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 24px;
+
+    .title {
+      margin-bottom: 0;
+    }
+  }
+
+  // .bet-history__tickets
+  &__tickets {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  // .bet-history__ticket
+  &__ticket {
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+
+    &.active {
+      .bet-history__ticket-content {
+        padding: 0 20px 20px;
+        max-height: 1000px;
+      }
+
+      .bet-history__ticket-btn {
+        img {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  // .bet-history__ticket-header
+  &__ticket-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px 0;
+    cursor: pointer;
+  }
+
+  // .bet-history__ticket-main
+  &__ticket-main {
+    padding: 16px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  // .bet-history__ticket-status
+  &__ticket-status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--white);
+
+    &--calculated {
+      background-color: #10B981;
+    }
+
+    &--pending {
+      background-color: var(--main-yellow);
+    }
+
+    &--lost {
+      background-color: #EF4444;
+    }
+  }
+
+  // .bet-history__ticket-info
+  &__ticket-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 0 1 50%;
+    justify-content: space-between;
+  }
+
+  // .bet-history__ticket-number
+  &__ticket-number {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 110%;
+    color: var(--text);
+  }
+
+  // .bet-history__ticket-btn
+  &__ticket-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    padding: 4px;
+
+    img {
+      transition: transform 0.3s ease-in-out;
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  // .bet-history__ticket-content
+  &__ticket-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  }
+
+  // .bet-history__ticket-details
+  &__ticket-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  // .bet-history__ticket-numbers
+  &__ticket-numbers {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+
+  // .bet-history__ticket-number-item
+  &__ticket-number-item {
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 100%;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(140deg, #b2b2b2 0%, #f5f5f5 100%);
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--white);
+
+    &--gold {
+      background: linear-gradient(140deg, #fbbf24 0%, #f5da75 100%);
+    }
+
+    &--win {
+      background: linear-gradient(140deg, #10b981 0%, #52f4be 100%);
+    }
+
+    &--inactive {
+      background: linear-gradient(140deg, #b2b2b2 0%, #f5f5f5 100%);
+      color: var(--white);
+    }
+  }
+
+  // .bet-history__ticket-subtext
+  &__ticket-subtext {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: #a4a4a4;
+    text-align: center;
+  }
+
+  // .bet-history__ticket-result
+  &__ticket-result {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+
+  // .bet-history__ticket-result-text
+  &__ticket-result-text {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 110%;
+    color: var(--text);
+  }
+
+  // .bet-history__ticket-result-amount
+  &__ticket-result-amount {
+    font-family: var(--third-family);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 110%;
+    color: var(--text);
+  }
+
+  // .bet-history__ticket-action
+  &__ticket-action {}
+
+  // .bet-history__ticket-action-btn
+  &__ticket-action-btn {
+    height: 60px;
+    width: 100%;
+    padding: 6px 12px;
+    background-color: transparent;
+    background-image: url('../img/icons/win-bg.png');
+    background-size: 100% 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    span {
+      display: block;
+      margin-top: -4px;
+    }
+
+    @media (max-width: 540px) {
+      height: 40px;
+    }
+  }
+
+  // .bet-history__ticket-extra
+  &__ticket-extra {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  // .bet-history__ticket-extra-item
+  &__ticket-extra-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 110%;
+    color: var(--text);
+
+    & span:first-child {
+      font-size: 14px;
+      font-weight: 400;
+      color: #a4a4a4;
+    }
+
+    .hero__tirages-slide-random {
+      margin-left: 2px;
+    }
+  }
+
+  // .bet-history__ticket-star
+  &__ticket-star {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+
+    span {
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text);
+    }
+  }
+
+  // .bet-history__ticket-actions
+  &__ticket-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  // .bet-history__ticket-actions-repeat
+  &__ticket-actions-repeat {
+    flex: 1;
+  }
+
+  // .bet-history__ticket-actions-share
+  &__ticket-actions-share {
+    width: 52px;
+    height: 52px;
+    border-radius: 8px;
+    border: 1px solid var(--main-purple);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
