@@ -1465,6 +1465,10 @@ body.locked {
   outline: 0;
 }
 
+.deposit__field-optional {
+  color: #999999;
+}
+
 .deposit-withdrawal__balance {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1678,18 +1682,15 @@ body.locked {
   font-size: 13px;
 }
 
-.winnings-table__table-jackpot {
-  font-family: var(--font-family);
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 130%;
-  text-align: center;
-  color: var(--main-purple);
-}
-
 .winnings-table__table-text {
   max-width: 340px;
-  margin: 0 auto;
+  margin: 6px auto 0;
+}
+
+.winnings-table__table-jackpot {
+  font-family: var(--font-family);
+  font-size: 11px;
+  text-align: center;
 }
 
 .how-to-play__content {
@@ -2380,12 +2381,10 @@ input:checked + .profile__toggle-slider:before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 16px 20px 0;
   cursor: pointer;
 }
@@ -2693,6 +2692,43 @@ input:checked + .profile__toggle-slider:before {
 .bet-history__ticket-actions-share img {
   width: 20px;
   height: 20px;
+}
+
+.bet-history__ticket-status-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 12px;
+  background-color: #3A5AFB;
+  border-radius: 12px 12px 0 0;
+  padding: 6px 12px;
+  margin: -16px -20px 0;
+  margin-bottom: 20px;
+}
+
+.bet-history__ticket-status-inner-text {
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-style: italic;
+  color: var(--white);
+}
+
+.bet-history__ticket-status-inner-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .win-history__header {
@@ -3867,7 +3903,7 @@ input:checked + .profile__toggle-slider:before {
   margin-bottom: 0;
   font-family: var(--third-family);
   font-weight: 800;
-  font-size: 18px;
+  font-size: 22px;
   text-transform: uppercase;
   color: var(--text);
 }

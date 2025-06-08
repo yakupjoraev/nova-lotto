@@ -12,16 +12,13 @@
   }
 }
 
-.winnings-table__table-jackpot {
-  font-family: var(--font-family);
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 130%;
-  text-align: center;
-  color: var(--main-purple);
-}
-
 .winnings-table__table-text {
   max-width: 340px;
-  margin: 0 auto;
+  margin: 6px auto 0;
+}
+
+.winnings-table__table-jackpot {
+  font-family: var(--font-family);
+  font-size: 11px;
+  text-align: center;
 }
