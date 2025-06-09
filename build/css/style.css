@@ -1,6 +1,6 @@
 :root {
   --font-family: "HelveticaNeueCyr", sans-serif;
-  --second-family: "Widock", sans-serif;
+  --second-family: "Widock TRIAL", sans-serif;
   --third-family: "Gilroy", sans-serif;
   --main-purple: #5d14d0;
   --main-yellow: #fbbf24;
@@ -217,8 +217,8 @@ body.locked {
 }
 
 @font-face {
-  font-family: "Widock";
-  src: url("../fonts/Widock TRIAL Bold.otf") format("otf");
+  font-family: "Widock TRIAL";
+  src: url("../fonts/Widock-TRIAL-Bold-designer.otf") format("otf"), url("../fonts/Widock-TRIAL-Bold.woff") format("woff");
   font-weight: 700;
 }
 
@@ -1941,6 +1941,7 @@ body.locked {
   gap: 8px;
   padding: 10px 20px;
   font-family: var(--second-family);
+  text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
   line-height: 100%;

@@ -23,8 +23,9 @@
 }
 
 @font-face {
-  font-family: 'Widock';
-  src: url('../fonts/Widock TRIAL Bold.otf') format('otf');
+  font-family: 'Widock TRIAL';
+  src: url('../fonts/Widock-TRIAL-Bold-designer.otf') format('otf'),
+    url('../fonts/Widock-TRIAL-Bold.woff') format('woff');
   font-weight: 700;
 }
 
